@@ -1,0 +1,61 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username":"Kevo1017",
+            "password":"123"
+        }
+    ],
+    "migJobs": [
+        {
+            "id": 1,
+            "userId": 0,
+            "date": "",
+            "baseMetal":"",
+            "weldType": "",
+            "amperage": 120,
+            "wireSpeed": 180,
+            "wireSize": ".035",
+            "jobNotes": "sample"
+        }
+    ],
+    "stickJobs": [
+        {
+            "id": 1,
+            "userId": 0,
+            "date": "",
+            "baseMetal":"",
+            "weldType": "",
+            "amperage": 120,
+            "electrode": "",
+            "jobNotes": "sample"
+        }
+    ],
+    "tigJobs": [
+        {
+            "id": 1,
+            "userId": 0,
+            "date": "",
+            "baseMetal":"",
+            "weldType": "",
+            "tungstenSize": "",
+            "fillerMetal": "",
+            "amperage": 120,
+            "cupSize": "",
+            "jobNotes": "sample"
+        }
+    ],
+    "fluxJobs": [
+        {
+            "id": 1,
+            "userId": 0,
+            "date": "",
+            "baseMetal":"",
+            "weldType": "",
+            "amperage": 120,
+            "wireSpeed": 180,
+            "wireSize": ".035",
+            "jobNotes": "sample"
+        }
+    ]
+}
