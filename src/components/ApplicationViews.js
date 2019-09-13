@@ -3,6 +3,10 @@ import React, { Component } from "react";
 import RegistrationForm from "./auth/RegistrationForm";
 import LoginForm from "./auth/LoginForm";
 import Home from "./home/Home"
+import MigForm from "./mig/MigForm"
+import FluxForm from "./flux/FluxForm"
+import StickForm from "./stick/StickForm"
+import TigForm from "./tig/TigForm"
 
 class ApplicationViews extends Component {
 
@@ -34,6 +38,42 @@ class ApplicationViews extends Component {
                     path="/login"
                     render={props => {
                         return <LoginForm {...props} loadData={this.loadData} />;
+                    }}
+                />
+                <Route
+                    exact
+                    path="/MigForm"
+                    render={props => {
+                        return this.isAuthenticated()
+                        ?(<MigForm {...props} />)
+                        :(<Redirect to="/login"/>)
+                    }}
+                />
+                <Route
+                    exact
+                    path="/FluxForm"
+                    render={props => {
+                        return this.isAuthenticated()
+                        ?(<FluxForm {...props} />)
+                        :(<Redirect to="/login"/>)
+                    }}
+                />
+                <Route
+                    exact
+                    path="/StickForm"
+                    render={props => {
+                        return this.isAuthenticated()
+                        ?(<StickForm {...props} />)
+                        :(<Redirect to="/login"/>)
+                    }}
+                />
+                <Route
+                    exact
+                    path="/TigForm"
+                    render={props => {
+                        return this.isAuthenticated()
+                        ?(<TigForm {...props} />)
+                        :(<Redirect to="/login"/>)
                     }}
                 />
             </React.Fragment>

@@ -1,61 +1,159 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "username":"Kevo1017",
-            "password":"123"
-        }
-    ],
-    "migJobs": [
-        {
-            "id": 1,
-            "userId": 0,
-            "date": "",
-            "baseMetal":"",
-            "weldType": "",
-            "amperage": 120,
-            "wireSpeed": 180,
-            "wireSize": ".035",
-            "jobNotes": "sample"
-        }
-    ],
-    "stickJobs": [
-        {
-            "id": 1,
-            "userId": 0,
-            "date": "",
-            "baseMetal":"",
-            "weldType": "",
-            "amperage": 120,
-            "electrode": "",
-            "jobNotes": "sample"
-        }
-    ],
-    "tigJobs": [
-        {
-            "id": 1,
-            "userId": 0,
-            "date": "",
-            "baseMetal":"",
-            "weldType": "",
-            "tungstenSize": "",
-            "fillerMetal": "",
-            "amperage": 120,
-            "cupSize": "",
-            "jobNotes": "sample"
-        }
-    ],
-    "fluxJobs": [
-        {
-            "id": 1,
-            "userId": 0,
-            "date": "",
-            "baseMetal":"",
-            "weldType": "",
-            "amperage": 120,
-            "wireSpeed": 180,
-            "wireSize": ".035",
-            "jobNotes": "sample"
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "username": "Kevo1017",
+      "password": "123"
+    },
+    {
+      "username": "Morty",
+      "password": "123",
+      "id": 2
+    }
+  ],
+  "migJobs": [
+    {
+      "id": 1,
+      "userId": 0,
+      "date": "",
+      "baseMetal": "",
+      "weldType": "",
+      "amperage": 120,
+      "wireSpeed": 180,
+      "wireSize": ".035",
+      "jobNotes": "sample"
+    },
+    {
+      "date": "2019-09-13",
+      "baseMetal": "1\" Base Plate/ carbon steel",
+      "weldType": "9/16\" fillet weld",
+      "amperage": "240",
+      "wireSpeed": "240",
+      "wireSize": ".045",
+      "jobNotes": "",
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "date": "2019-09-13",
+      "baseMetal": "tester",
+      "weldType": "tester",
+      "amperage": "1",
+      "wireSpeed": "1",
+      "wireSize": ".024",
+      "jobNotes": "tester",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "date": "2019-09-13",
+      "baseMetal": "6\" sch 40 stainless",
+      "weldType": "cap and finish",
+      "amperage": "125",
+      "jobNotes": "Walked the cup like a champ",
+      "userId": 1,
+      "id": 4
+    }
+  ],
+  "stickJobs": [
+    {
+      "id": 1,
+      "userId": 0,
+      "date": "",
+      "baseMetal": "",
+      "weldType": "",
+      "amperage": 120,
+      "electrode": "",
+      "jobNotes": "sample"
+    },
+    {
+      "date": "2019-09-13",
+      "baseMetal": "6\" Schedule 40 pipe",
+      "weldType": "Root Pass",
+      "electrode": "1/8in 6010",
+      "amperage": "70",
+      "jobNotes": "",
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "date": "2019-09-13",
+      "baseMetal": "test",
+      "weldType": "test",
+      "electrode": "test",
+      "amperage": "1",
+      "jobNotes": "",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "date": "2019-09-13",
+      "baseMetal": "test 2",
+      "weldType": "test 2",
+      "electrode": "test 2",
+      "amperage": "1",
+      "jobNotes": "test 2",
+      "userId": 1,
+      "id": 4
+    }
+  ],
+  "tigJobs": [
+    {
+      "id": 1,
+      "userId": 0,
+      "date": "",
+      "baseMetal": "",
+      "weldType": "",
+      "tungstenSize": "",
+      "fillerMetal": "",
+      "amperage": 120,
+      "cupSize": "",
+      "jobNotes": "sample"
+    },
+    {
+      "date": "2019-09-13",
+      "baseMetal": "6in schedule 40 stainless",
+      "weldType": "Cap and finish",
+      "amperage": "125",
+      "jobNotes": "Walked the cup like a champ ",
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "date": "2019-09-13",
+      "baseMetal": "4in sch 80 carbon",
+      "weldType": "root pass",
+      "tungstenSize": "3/32 thoriated",
+      "fillerMetal": "1/8",
+      "amperage": "80",
+      "cupSize": "5",
+      "jobNotes": "Tried feeding the wire through the pipe but kept sticking my tungsten. Had better luck laying the filler in and walking the cup in the bevel and burning the root in. Used a 3/32 gap and 1/8 filler",
+      "userId": 1,
+      "id": 3
+    }
+  ],
+  "fluxJobs": [
+    {
+      "id": 1,
+      "userId": 0,
+      "date": "",
+      "baseMetal": "",
+      "weldType": "",
+      "amperage": 120,
+      "wireSpeed": 180,
+      "wireSize": ".035",
+      "jobNotes": "sample"
+    },
+    {
+      "date": "2019-09-13",
+      "baseMetal": "flux",
+      "weldType": "flux",
+      "amperage": "10000",
+      "wireSpeed": "10000",
+      "wireSize": ".045",
+      "jobNotes": "",
+      "userId": 1,
+      "id": 2
+    }
+  ]
 }

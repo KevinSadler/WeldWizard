@@ -90,33 +90,29 @@ class RegistrationForm extends Component {
                                 required
                                 onChange={this.handleFieldChange}
                                 id="username"
-                                placeholder="Enter your username"
+                                placeholder="Enter New Username"
                             />
-                            <label htmlFor="username">Email</label>
                             <input
                                 type="username"
                                 required
                                 onChange={this.handleFieldChange}
                                 id="usernameConfirm"
-                                placeholder="Confirm your username"
+                                placeholder="Confirm Username"
                             />
-                            <label htmlFor="usernameConfirm">Confirm Email</label>
                             <input
                                 type="password"
                                 required
                                 onChange={this.handleFieldChange}
                                 id="password"
-                                placeholder="create password"
+                                placeholder="Create Password"
                             />
-                            <label htmlFor="password">password</label>
                             <input
                                 type="password"
                                 required
                                 onChange={this.handleFieldChange}
                                 id="passwordConfirm"
-                                placeholder="confirm password"
+                                placeholder="Confirm Password"
                             />
-                            <label htmlFor="passwordConfirm">confirm password</label>
                         </div>
                         <div className="alignRight">
                             <button
