@@ -27,7 +27,7 @@
       <div>
         <Nav pills>
           <NavItem>
-            <NavLink to="/" active>Home</NavLink>
+            <NavLink href="/" active>Home</NavLink>
           </NavItem>
           <Dropdown nav isOpen={this.state.dropdownOpen} toggle={this.toggle}>
             <DropdownToggle nav caret>
@@ -35,16 +35,16 @@
             </DropdownToggle>
             <DropdownMenu>
               <DropdownItem tag={Link} to="/MigForm">Mig Job</DropdownItem>
-              <DropdownItem to="/StickForm">Stick Job</DropdownItem>
-              <DropdownItem to="/TigForm">Tig Job</DropdownItem>
-              <DropdownItem to="/FluxForm">Flux Core Job</DropdownItem>
+              <DropdownItem tag={Link} to="/StickForm">Stick Job</DropdownItem>
+              <DropdownItem tag={Link} to="/TigForm">Tig Job</DropdownItem>
+              <DropdownItem tag={Link} to="/FluxForm">Flux Core Job</DropdownItem>
             </DropdownMenu>
           </Dropdown>
           <NavItem>
-            <NavLink href="#">Charts</NavLink>
+            <NavLink href="/Charts">Charts</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink  onClick={this.handleLogout}>Log Out</NavLink>
+            <NavLink href="/" onClick={this.handleLogout}>Log Out</NavLink>
           </NavItem>
         </Nav>
       </div>
