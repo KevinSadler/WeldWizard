@@ -2,11 +2,13 @@ import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import RegistrationForm from "./auth/RegistrationForm";
 import LoginForm from "./auth/LoginForm";
-import Home from "./home/Home"
+import CardList from "./home/CardList"
 import MigForm from "./mig/MigForm"
 import FluxForm from "./flux/FluxForm"
 import StickForm from "./stick/StickForm"
 import TigForm from "./tig/TigForm"
+import TigDetail from "./tig/TigDetail"
+import TigEditForm from "./tig/TigEditForm"
 
 class ApplicationViews extends Component {
 
@@ -20,7 +22,7 @@ class ApplicationViews extends Component {
                     path="/"
                     render={props => {
                         return this.isAuthenticated() ? (
-                            <Home {...props} />
+                            <CardList {...props} />
                         ) : (
                                 <Redirect to="/login" />
                             );
@@ -45,8 +47,8 @@ class ApplicationViews extends Component {
                     path="/MigForm"
                     render={props => {
                         return this.isAuthenticated()
-                        ?(<MigForm {...props} />)
-                        :(<Redirect to="/login"/>)
+                            ? (<MigForm {...props} />)
+                            : (<Redirect to="/login" />)
                     }}
                 />
                 <Route
@@ -54,8 +56,8 @@ class ApplicationViews extends Component {
                     path="/FluxForm"
                     render={props => {
                         return this.isAuthenticated()
-                        ?(<FluxForm {...props} />)
-                        :(<Redirect to="/login"/>)
+                            ? (<FluxForm {...props} />)
+                            : (<Redirect to="/login" />)
                     }}
                 />
                 <Route
@@ -63,8 +65,8 @@ class ApplicationViews extends Component {
                     path="/StickForm"
                     render={props => {
                         return this.isAuthenticated()
-                        ?(<StickForm {...props} />)
-                        :(<Redirect to="/login"/>)
+                            ? (<StickForm {...props} />)
+                            : (<Redirect to="/login" />)
                     }}
                 />
                 <Route
@@ -72,8 +74,19 @@ class ApplicationViews extends Component {
                     path="/TigForm"
                     render={props => {
                         return this.isAuthenticated()
-                        ?(<TigForm {...props} />)
-                        :(<Redirect to="/login"/>)
+                            ? (<TigForm {...props} />)
+                            : (<Redirect to="/login" />)
+                    }}
+                />
+                <Route exact path="/tigJobs/:jobId(\d+)" render={(props) => {
+                    return <TigDetail jobId={parseInt(props.match.params.jobId)} {...props} />
+                }} />
+                <Route
+                    path="/tigJobs/:jobId(\d+)/edit"
+                    render={props => {
+                        return this.isAuthenticated()
+                            ? <TigEditForm jobId={parseInt(props.match.params.jobId)} {...props} />
+                            : <Redirect to="/login" />;
                     }}
                 />
             </React.Fragment>
