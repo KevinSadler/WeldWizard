@@ -13,17 +13,6 @@
   ],
   "migJobs": [
     {
-      "id": 1,
-      "userId": 0,
-      "date": "",
-      "baseMetal": "",
-      "weldType": "",
-      "amperage": 120,
-      "wireSpeed": 180,
-      "wireSize": ".035",
-      "jobNotes": "sample"
-    },
-    {
       "date": "2019-09-13",
       "baseMetal": "1\" Base Plate/ carbon steel",
       "weldType": "9/16\" fillet weld",
@@ -57,16 +46,6 @@
   ],
   "stickJobs": [
     {
-      "id": 1,
-      "userId": 0,
-      "date": "",
-      "baseMetal": "",
-      "weldType": "",
-      "amperage": 120,
-      "electrode": "",
-      "jobNotes": "sample"
-    },
-    {
       "date": "2019-09-13",
       "baseMetal": "6\" Schedule 40 pipe",
       "weldType": "Root Pass",
@@ -99,27 +78,8 @@
   ],
   "tigJobs": [
     {
-      "id": 1,
-      "userId": 0,
-      "date": "",
-      "baseMetal": "",
-      "weldType": "",
-      "tungstenSize": "",
-      "fillerMetal": "",
-      "amperage": 120,
-      "cupSize": "",
-      "jobNotes": "sample"
-    },
-    {
-      "date": "2019-09-13",
-      "baseMetal": "6in schedule 40 stainless",
-      "weldType": "Cap and finish",
-      "amperage": "125",
-      "jobNotes": "Walked the cup like a champ ",
+      "id": 3,
       "userId": 1,
-      "id": 2
-    },
-    {
       "date": "2019-09-13",
       "baseMetal": "4in sch 80 carbon",
       "weldType": "root pass",
@@ -127,23 +87,10 @@
       "fillerMetal": "1/8",
       "amperage": "80",
       "cupSize": "5",
-      "jobNotes": "Tried feeding the wire through the pipe but kept sticking my tungsten. Had better luck laying the filler in and walking the cup in the bevel and burning the root in. Used a 3/32 gap and 1/8 filler",
-      "userId": 1,
-      "id": 3
+      "jobNotes": "Tried feeding the wire through the pipe but kept sticking my tungsten. Had better luck laying the filler in and walking the cup in the bevel and burning the root in. Used a 3/32 gap and 1/8 filler"
     }
   ],
   "fluxJobs": [
-    {
-      "id": 1,
-      "userId": 0,
-      "date": "",
-      "baseMetal": "",
-      "weldType": "",
-      "amperage": 120,
-      "wireSpeed": 180,
-      "wireSize": ".035",
-      "jobNotes": "sample"
-    },
     {
       "date": "2019-09-13",
       "baseMetal": "flux",
