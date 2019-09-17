@@ -112,6 +112,7 @@ class MigForm extends Component {
                             </select>
                         <label htmlFor="jobNotes">Job Notes</label>
                         <textarea id="jobNotes" required onChange={this.handleFieldChange}></textarea>
+                        <input type="file">Add Image</input>
                         </div>
                     <div className="alignRight">
                         <button

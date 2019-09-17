@@ -1,7 +1,7 @@
 import React, { Component } from "react"
-import MigManager from "../../modules/MigManager"
+import FluxManager from "../../modules/FluxManager"
 
-class MigEditForm extends Component {
+class FluxEditForm extends Component {
     //set the initial state
     state = {
         date: "",
@@ -39,12 +39,12 @@ class MigEditForm extends Component {
             jobNotes: this.state.jobNotes,
         };
 
-        MigManager.update(editedJob)
-            .then(() => this.props.history.push("/migJobs/" + this.props.jobId))
+        FluxManager.update(editedJob)
+            .then(() => this.props.history.push("/fluxJobs/" + this.props.jobId))
     }
 
     componentDidMount() {
-        MigManager.get(this.props.match.params.jobId)
+        FluxManager.get(this.props.match.params.jobId)
             .then(job => {
                 this.setState({
                     date: job.date,
@@ -126,4 +126,4 @@ class MigEditForm extends Component {
     }
 }
 
-export default MigEditForm
+export default FluxEditForm

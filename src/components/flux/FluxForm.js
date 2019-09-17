@@ -7,8 +7,8 @@ class FluxForm extends Component {
         jobDate: "",
         baseMetal: "",
         weldType: "",
-        amperage: "",
-        wireSpeed: 0,
+        voltage: "",
+        wireSpeed: "",
         wireSize: "",
         jobNotes: "",
         // userId: sessionStorage.getItem("credentials.activeUserId"),
@@ -24,7 +24,7 @@ class FluxForm extends Component {
     */
     createNewJob = evt => {
         evt.preventDefault();
-        if (this.state.jobDate === "" || this.state.baseMetal === "" || this.state.weldType === "" || this.state.amperage === "" || this.state.wireSpeed === "" || this.state.wireSize === "") {
+        if (this.state.jobDate === "" || this.state.baseMetal === "" || this.state.weldType === "" || this.state.voltage === "" || this.state.wireSpeed === "" || this.state.wireSize === "") {
             window.alert("Please fill out all input fields");
         } else {
             var userInfo = JSON.parse(sessionStorage.getItem("credentials"))
@@ -34,7 +34,7 @@ class FluxForm extends Component {
                 date: this.state.jobDate,
                 baseMetal: this.state.baseMetal,
                 weldType: this.state.weldType,
-                amperage: this.state.amperage,
+                voltage: this.state.voltage,
                 wireSpeed: this.state.wireSpeed,
                 wireSize: this.state.wireSize,
                 jobNotes: this.state.jobNotes,
@@ -88,8 +88,8 @@ class FluxForm extends Component {
                             <input
                                 type="number"
                                 required onChange={this.handleFieldChange}
-                                id="amperage" />
-                            <label htmlFor="amperage">Amperage</label>
+                                id="voltage" />
+                            <label htmlFor="voltage">Voltage</label>
                             <br/>
                             <input
                                 type="number"

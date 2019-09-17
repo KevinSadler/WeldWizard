@@ -52,15 +52,15 @@
   ],
   "fluxJobs": [
     {
-      "date": "2019-09-13",
-      "baseMetal": "flux",
-      "weldType": "flux",
-      "amperage": "10000",
-      "wireSpeed": "10000",
-      "wireSize": ".045",
-      "jobNotes": "",
+      "id": 3,
       "userId": 1,
-      "id": 2
+      "date": "2019-09-17",
+      "baseMetal": "1\" Base Plate",
+      "weldType": "9/16 fillet weld",
+      "wireSize": ".045",
+      "voltage": "24",
+      "wireSpeed": "240",
+      "jobNotes": "This Lincoln UltraCore wire runs so smooth... but dang it gets hot!"
     }
   ]
 }

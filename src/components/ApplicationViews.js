@@ -7,6 +7,8 @@ import MigForm from "./mig/MigForm"
 import MigDetail from "./mig/MigDetail"
 import MigEditForm from "./mig/MigEditForm"
 import FluxForm from "./flux/FluxForm"
+import FluxDetail from "./flux/FluxDetail"
+import FluxEditForm from "./flux/FluxEditForm"
 import StickForm from "./stick/StickForm"
 import StickDetail from "./stick/StickDetail"
 import StickEditForm from "./stick/StickEditForm"
@@ -73,6 +75,17 @@ class ApplicationViews extends Component {
                         return this.isAuthenticated()
                             ? (<FluxForm {...props} />)
                             : (<Redirect to="/login" />)
+                    }}
+                />
+                <Route exact path="/fluxJobs/:jobId(\d+)" render={(props) => {
+                    return <FluxDetail jobId={parseInt(props.match.params.jobId)} {...props} />
+                }} />
+                <Route
+                    path="/fluxJobs/:jobId(\d+)/edit"
+                    render={props => {
+                        return this.isAuthenticated()
+                            ? <FluxEditForm jobId={parseInt(props.match.params.jobId)} {...props} />
+                            : <Redirect to="/login" />;
                     }}
                 />
                 <Route
