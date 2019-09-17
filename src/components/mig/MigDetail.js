@@ -1,37 +1,37 @@
 import React, { Component } from 'react';
-import TigManager from '../../modules/TigManager';
+import MigManager from '../../modules/MigManager';
 import {
-    Card, CardText, CardBody, CardLink,
+    Card, CardText, CardBody,
     CardTitle,
 } from 'reactstrap';
 
-class TigDetail extends Component {
+class MigDetail extends Component {
 
     state = {
         date: "",
         baseMetal: "",
         weldType: "",
-        tungstenSize: "",
-        fillerMetal: "",
         amperage: "",
-        cupSize: "",
+        wireSpeed: "",
+        wireSize: "",
         jobNotes: "",
+        img: ""
         loadingStatus: false,
     }
 
     componentDidMount() {
-        //get(id) from TigManager and hang on to that data; put it into state
-        TigManager.get(this.props.jobId)
+        //get(id) from MigManager and hang on to that data; put it into state
+        MigManager.get(this.props.jobId)
             .then((job) => {
                 this.setState({
                     date: job.date,
                     baseMetal: job.baseMetal,
                     weldType: job.weldType,
-                    tungstenSize: job.tungstenSize,
-                    fillerMetal: job.fillerMetal,
                     amperage: job.amperage,
-                    cupSize: job.cupSize,
+                    wireSpeed: job.wireSpeed,
+                    wireSize: job.wireSize,
                     jobNotes: job.jobNotes,
+                    img: job.img,
                     loadingStatus: false
                 });
             });
@@ -40,7 +40,7 @@ class TigDetail extends Component {
     handleDelete = () => {
         //invoke the delete function in jobManger and re-direct to the job list.
         this.setState({ loadingStatus: true })
-        TigManager.delete(this.props.jobId)
+        MigManager.delete(this.props.jobId)
             .then(() => this.props.history.push("/"))
     }
     render() {
@@ -52,10 +52,8 @@ class TigDetail extends Component {
                         <CardText>Date: {this.state.date}</CardText>
                         <CardText>Base Metal:{this.state.baseMetal}</CardText>
                         <CardText>Weld Type:{this.state.weldType}</CardText>
-                        <CardText>Tungsten:{this.state.tungstenSize}</CardText>
-                        <CardText>Filler Metal:{this.state.fillerMetal}</CardText>
+                        <CardText>Electrode:{this.state.electrode}</CardText>
                         <CardText>Amperage:{this.state.amperage}</CardText>
-                        <CardText>Cup #:{this.state.cupSize}</CardText>
                         <CardText>Job Notes:{this.state.jobNotes}</CardText>
                     </CardBody>
                     <CardBody>
@@ -63,7 +61,7 @@ class TigDetail extends Component {
                     </CardBody>
                     <button className="cancel-button" onClick={() => { this.props.history.push("/") }}>Back To Log</button>
                     <button type="button"
-                        onClick={() => { this.props.history.push(`/tigJobs/${this.props.jobId}/edit`) }}>Edit Details</button>
+                        onClick={() => { this.props.history.push(`/stickJobs/${this.props.jobId}/edit`) }}>Edit Details</button>
                     <button type="button" onClick={this.handleDelete}>Delete</button>
                 </Card>
             </div>
@@ -71,4 +69,4 @@ class TigDetail extends Component {
     }
 }
 
-export default TigDetail;
+export default MigDetail;
