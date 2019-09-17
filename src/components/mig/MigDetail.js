@@ -11,11 +11,11 @@ class MigDetail extends Component {
         date: "",
         baseMetal: "",
         weldType: "",
-        amperage: "",
+        voltage: "",
         wireSpeed: "",
         wireSize: "",
         jobNotes: "",
-        img: ""
+        img: "",
         loadingStatus: false,
     }
 
@@ -27,7 +27,7 @@ class MigDetail extends Component {
                     date: job.date,
                     baseMetal: job.baseMetal,
                     weldType: job.weldType,
-                    amperage: job.amperage,
+                    voltage: job.voltage,
                     wireSpeed: job.wireSpeed,
                     wireSize: job.wireSize,
                     jobNotes: job.jobNotes,
@@ -52,8 +52,9 @@ class MigDetail extends Component {
                         <CardText>Date: {this.state.date}</CardText>
                         <CardText>Base Metal:{this.state.baseMetal}</CardText>
                         <CardText>Weld Type:{this.state.weldType}</CardText>
-                        <CardText>Electrode:{this.state.electrode}</CardText>
-                        <CardText>Amperage:{this.state.amperage}</CardText>
+                        <CardText>Voltage:{this.state.voltage}</CardText>
+                        <CardText>Wire Size:{this.state.wireSize}</CardText>
+                        <CardText>Wire Speed:{this.state.wireSpeed}</CardText>
                         <CardText>Job Notes:{this.state.jobNotes}</CardText>
                     </CardBody>
                     <CardBody>
@@ -61,7 +62,7 @@ class MigDetail extends Component {
                     </CardBody>
                     <button className="cancel-button" onClick={() => { this.props.history.push("/") }}>Back To Log</button>
                     <button type="button"
-                        onClick={() => { this.props.history.push(`/stickJobs/${this.props.jobId}/edit`) }}>Edit Details</button>
+                        onClick={() => { this.props.history.push(`/migJobs/${this.props.jobId}/edit`) }}>Edit Details</button>
                     <button type="button" onClick={this.handleDelete}>Delete</button>
                 </Card>
             </div>

@@ -13,35 +13,15 @@
   ],
   "migJobs": [
     {
-      "date": "2019-09-13",
-      "baseMetal": "1\" Base Plate/ carbon steel",
-      "weldType": "9/16\" fillet weld",
-      "amperage": "240",
+      "id": 5,
+      "userId": 1,
+      "date": "2019-09-16",
+      "baseMetal": "1/4\" pipe rail",
+      "weldType": "Fill & Clean",
+      "wireSize": ".035",
+      "voltage": "24",
       "wireSpeed": "240",
-      "wireSize": ".045",
-      "jobNotes": "",
-      "userId": 1,
-      "id": 2
-    },
-    {
-      "date": "2019-09-13",
-      "baseMetal": "tester",
-      "weldType": "tester",
-      "amperage": "1",
-      "wireSpeed": "1",
-      "wireSize": ".024",
-      "jobNotes": "tester",
-      "userId": 1,
-      "id": 3
-    },
-    {
-      "date": "2019-09-13",
-      "baseMetal": "6\" sch 40 stainless",
-      "weldType": "cap and finish",
-      "amperage": "125",
-      "jobNotes": "Walked the cup like a champ",
-      "userId": 1,
-      "id": 4
+      "jobNotes": "Another boring day.."
     }
   ],
   "stickJobs": [

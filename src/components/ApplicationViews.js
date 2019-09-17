@@ -4,6 +4,8 @@ import RegistrationForm from "./auth/RegistrationForm";
 import LoginForm from "./auth/LoginForm";
 import CardList from "./home/CardList"
 import MigForm from "./mig/MigForm"
+import MigDetail from "./mig/MigDetail"
+import MigEditForm from "./mig/MigEditForm"
 import FluxForm from "./flux/FluxForm"
 import StickForm from "./stick/StickForm"
 import StickDetail from "./stick/StickDetail"
@@ -51,6 +53,17 @@ class ApplicationViews extends Component {
                         return this.isAuthenticated()
                             ? (<MigForm {...props} />)
                             : (<Redirect to="/login" />)
+                    }}
+                />
+                <Route exact path="/migJobs/:jobId(\d+)" render={(props) => {
+                    return <MigDetail jobId={parseInt(props.match.params.jobId)} {...props} />
+                }} />
+                <Route
+                    path="/migJobs/:jobId(\d+)/edit"
+                    render={props => {
+                        return this.isAuthenticated()
+                            ? <MigEditForm jobId={parseInt(props.match.params.jobId)} {...props} />
+                            : <Redirect to="/login" />;
                     }}
                 />
                 <Route

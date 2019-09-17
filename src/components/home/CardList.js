@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
 import TigCard from '../tig/TigCard'
 import StickCard from '../stick/StickCard'
+import MigCard from '../mig/MigCard'
 import TigManager from '../../modules/TigManager'
 import StickManager from '../../modules/StickManager'
+import MigManager from '../../modules/MigManager'
 // import './job.css'
 
 class CardList extends Component {
   //define what this component needs to render
   state = {
     TigJobs: [],
-    StickJobs: []
+    StickJobs: [],
+    MigJobs: []
   }
 
   componentDidMount() {
@@ -25,6 +28,12 @@ class CardList extends Component {
         StickJobs: StickJobs
       })
     })  
+    MigManager.getAll()
+    .then((MigJobs) => {
+      this.setState({
+        MigJobs: MigJobs
+      })
+    })  
   }
 
   render() {
@@ -36,6 +45,9 @@ class CardList extends Component {
           )}
           {this.state.StickJobs.map(job =>
             <StickCard key={job.id} job={job} deleteJob={this.deleteJob} {...this.props} />
+          )}
+          {this.state.MigJobs.map(job =>
+            <MigCard key={job.id} job={job} deleteJob={this.deleteJob} {...this.props} />
           )}
         </div>
       </section>
