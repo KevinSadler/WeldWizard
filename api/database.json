@@ -46,34 +46,14 @@
   ],
   "stickJobs": [
     {
-      "date": "2019-09-13",
-      "baseMetal": "6\" Schedule 40 pipe",
-      "weldType": "Root Pass",
-      "electrode": "1/8in 6010",
-      "amperage": "70",
-      "jobNotes": "",
+      "date": "2019-09-16",
+      "baseMetal": "12\" Schedule 80",
+      "weldType": "root pass",
+      "electrode": "1/8\" 6010",
+      "amperage": "75",
+      "jobNotes": "Left a landing on the bevel so I turned the amps up to 75 for better penetration",
       "userId": 1,
-      "id": 2
-    },
-    {
-      "date": "2019-09-13",
-      "baseMetal": "test",
-      "weldType": "test",
-      "electrode": "test",
-      "amperage": "1",
-      "jobNotes": "",
-      "userId": 1,
-      "id": 3
-    },
-    {
-      "date": "2019-09-13",
-      "baseMetal": "test 2",
-      "weldType": "test 2",
-      "electrode": "test 2",
-      "amperage": "1",
-      "jobNotes": "test 2",
-      "userId": 1,
-      "id": 4
+      "id": 1
     }
   ],
   "tigJobs": [

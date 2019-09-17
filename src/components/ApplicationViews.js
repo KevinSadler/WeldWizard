@@ -6,6 +6,8 @@ import CardList from "./home/CardList"
 import MigForm from "./mig/MigForm"
 import FluxForm from "./flux/FluxForm"
 import StickForm from "./stick/StickForm"
+import StickDetail from "./stick/StickDetail"
+import StickEditForm from "./stick/StickEditForm"
 import TigForm from "./tig/TigForm"
 import TigDetail from "./tig/TigDetail"
 import TigEditForm from "./tig/TigEditForm"
@@ -67,6 +69,17 @@ class ApplicationViews extends Component {
                         return this.isAuthenticated()
                             ? (<StickForm {...props} />)
                             : (<Redirect to="/login" />)
+                    }}
+                />
+                <Route exact path="/stickJobs/:jobId(\d+)" render={(props) => {
+                    return <StickDetail jobId={parseInt(props.match.params.jobId)} {...props} />
+                }} />
+                <Route
+                    path="/stickJobs/:jobId(\d+)/edit"
+                    render={props => {
+                        return this.isAuthenticated()
+                            ? <StickEditForm jobId={parseInt(props.match.params.jobId)} {...props} />
+                            : <Redirect to="/login" />;
                     }}
                 />
                 <Route
