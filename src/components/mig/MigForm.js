@@ -11,7 +11,7 @@ class MigForm extends Component {
         wireSpeed: 0,
         wireSize: "",
         jobNotes: "",
-        // userId: sessionStorage.getItem("credentials.activeUserId"),
+        img: "",
         loadingStatus: false
     };
 
@@ -38,6 +38,7 @@ class MigForm extends Component {
                 wireSpeed: this.state.wireSpeed,
                 wireSize: this.state.wireSize,
                 jobNotes: this.state.jobNotes,
+                img: this.state.img,
                 userId: activeUserNum
             };
 

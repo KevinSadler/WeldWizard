@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import MigManager from '../../modules/MigManager';
+import FluxManager from '../../modules/FluxManager';
 import {
     Card, CardText, CardBody,
     CardTitle,
 } from 'reactstrap';
 
-class MigDetail extends Component {
+class FluxDetail extends Component {
 
     state = {
         date: "",
@@ -20,8 +20,8 @@ class MigDetail extends Component {
     }
 
     componentDidMount() {
-        //get(id) from MigManager and hang on to that data; put it into state
-        MigManager.get(this.props.jobId)
+        //get(id) from FluxManager and hang on to that data; put it into state
+        FluxManager.get(this.props.jobId)
             .then((job) => {
                 this.setState({
                     date: job.date,
@@ -40,7 +40,7 @@ class MigDetail extends Component {
     handleDelete = () => {
         //invoke the delete function in jobManger and re-direct to the job list.
         this.setState({ loadingStatus: true })
-        MigManager.delete(this.props.jobId)
+        FluxManager.delete(this.props.jobId)
             .then(() => this.props.history.push("/"))
     }
     render() {
@@ -48,7 +48,7 @@ class MigDetail extends Component {
             <div>
                 <Card>
                     <CardBody>
-                        <CardTitle>Process: GMAW</CardTitle>
+                        <CardTitle>Process: FCAW</CardTitle>
                         <CardText>Date: {this.state.date}</CardText>
                         <CardText>Base Metal:{this.state.baseMetal}</CardText>
                         <CardText>Weld Type:{this.state.weldType}</CardText>
@@ -62,7 +62,7 @@ class MigDetail extends Component {
                     </CardBody>
                     <button className="cancel-button" onClick={() => { this.props.history.push("/") }}>Back To Log</button>
                     <button type="button"
-                        onClick={() => { this.props.history.push(`/migJobs/${this.props.jobId}/edit`) }}>Edit Details</button>
+                        onClick={() => { this.props.history.push(`/fluxJobs/${this.props.jobId}/edit`) }}>Edit Details</button>
                     <button type="button" onClick={this.handleDelete}>Delete</button>
                 </Card>
             </div>
@@ -70,4 +70,4 @@ class MigDetail extends Component {
     }
 }
 
-export default MigDetail;
+export default FluxDetail;
