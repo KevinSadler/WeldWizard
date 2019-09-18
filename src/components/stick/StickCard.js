@@ -3,6 +3,7 @@ import {
     Card, CardImg, CardText, CardBody, CardLink,
     CardTitle, CardSubtitle
 } from 'reactstrap';
+import './StickCard.css'
 
 class StickCard extends Component {
     render() {

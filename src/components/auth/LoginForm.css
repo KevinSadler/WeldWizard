@@ -1,14 +1,8 @@
-.inputFormFieldset {
-    max-width: 40em;
-    height: 45em;
-    padding: 4px;
-    margin: 2em auto;
-    border: 0 none;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    border-radius: 5px;
+.loginFormFieldset{
+    height: 10em;
     background: aliceblue;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
-
 fieldset input, fieldset button, fieldset select, fieldset textarea{
     box-sizing: border-box;
     padding: .2em .4em;

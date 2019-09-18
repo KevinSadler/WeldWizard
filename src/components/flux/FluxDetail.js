@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import FluxManager from '../../modules/FluxManager';
 import {
     Card, CardText, CardBody,
-    CardTitle,
+    CardTitle, CardImg
 } from 'reactstrap';
 
 class FluxDetail extends Component {
@@ -15,7 +15,7 @@ class FluxDetail extends Component {
         wireSpeed: "",
         wireSize: "",
         jobNotes: "",
-        img: "",
+        uploadedFile: "",
         loadingStatus: false,
     }
 
@@ -31,7 +31,7 @@ class FluxDetail extends Component {
                     wireSpeed: job.wireSpeed,
                     wireSize: job.wireSize,
                     jobNotes: job.jobNotes,
-                    img: job.img,
+                    uploadedFile: job.img,
                     loadingStatus: false
                 });
             });
@@ -56,9 +56,10 @@ class FluxDetail extends Component {
                         <CardText>Wire Size:{this.state.wireSize}</CardText>
                         <CardText>Wire Speed:{this.state.wireSpeed}</CardText>
                         <CardText>Job Notes:{this.state.jobNotes}</CardText>
+                        <CardImg src={this.state.uploadedFile}></CardImg>
                     </CardBody>
                     <CardBody>
-                        <img width="100%" src={this.state.img} alt="Card image cap" />
+                        <img width="100%" src={this.state.img} alt="" />
                     </CardBody>
                     <button className="cancel-button" onClick={() => { this.props.history.push("/") }}>Back To Log</button>
                     <button type="button"

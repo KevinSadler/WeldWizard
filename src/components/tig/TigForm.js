@@ -91,7 +91,7 @@ class TigForm extends Component {
         return (
             <>
                 <form>
-                    <fieldset>
+                    <fieldset className="jobFormFieldset">
                         <div className="formgrid">
                             <input
                                 type="date"
@@ -161,7 +161,7 @@ class TigForm extends Component {
                                             >
                                                 <input {...getInputProps()} />
                                                 {
-                                                    <p>Try dropping some files here, or click to select files to upload.</p>
+                                                    <p className="addBorder">Click Here To Add An Image</p>
                                                 }
                                             </div>
                                         )
@@ -181,7 +181,7 @@ class TigForm extends Component {
                                 type="button"
                                 disabled={this.state.loadingStatus}
                                 onClick={this.createNewJob}
-                            >Add Event</button>
+                            >Add To Log</button>
                         </div>
                     </fieldset>
                 </form>

@@ -3,6 +3,7 @@ import {
     Card, CardImg, CardText, CardBody, CardLink,
     CardTitle, CardSubtitle
 } from 'reactstrap';
+import './MigCard.css'
 
 class MigCard extends Component {
     render() {

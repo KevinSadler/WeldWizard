@@ -177,7 +177,7 @@ class TigEditForm extends Component {
                                             >
                                                 <input  {...getInputProps()} />
                                                 {
-                                                    <p>Try dropping some files here, or click to select files to upload.</p>
+                                                    <p className="addBorder">Click Here To Add An Image</p>
                                                 }
                                             </div>
                                         )
