@@ -15,39 +15,65 @@ class CardList extends Component {
     TigJobs: [],
     StickJobs: [],
     MigJobs: [],
-    FluxJobs: []
+    FluxJobs: [],
+    allJobs: []
   }
 
   componentDidMount() {
     TigManager.getAll()
       .then((TigJobs) => {
+        const updateJobs = this.state.allJobs
+        updateJobs.push(TigJobs)
         this.setState({
-          TigJobs: TigJobs
+          TigJobs: TigJobs,
+          allJobs: updateJobs
         })
       })
     StickManager.getAll()
-    .then((StickJobs) => {
-      this.setState({
-        StickJobs: StickJobs
+      .then((StickJobs) => {
+        const updateJobs = this.state.allJobs
+        updateJobs.push(StickJobs)
+        this.setState({
+          StickJobs: StickJobs,
+          allJobs: updateJobs
+        })
       })
-    })  
     MigManager.getAll()
-    .then((MigJobs) => {
-      this.setState({
-        MigJobs: MigJobs
+      .then((MigJobs) => {
+        const updateJobs = this.state.allJobs
+        updateJobs.push(MigJobs)
+        this.setState({
+          MigJobs: MigJobs,
+          allJobs: updateJobs
+        })
       })
-    })  
     FluxManager.getAll()
-    .then((FluxJobs) => {
-      this.setState({
-        FluxJobs: FluxJobs
+      .then((FluxJobs) => {
+        const updateJobs = this.state.allJobs
+        updateJobs.push(FluxJobs)
+        this.setState({
+          FluxJobs: FluxJobs,
+          allJobs: updateJobs
+        })
       })
-    })  
+    console.log(this.state.allJobs)
   }
 
   render() {
     return (
       <section className="section-content">
+        <div className="radio-selector-div">
+          <fieldset>
+            <legend>Filter By Process:</legend>
+            <p>
+            All:<input type="radio" name="all" value="1" defaultChecked/>
+            Mig:<input type="radio" name="mig" value="2" />
+            Stick:<input type="radio" name="stick" value="3" />
+            Tig:<input type="radio" name="tig" value="4" />
+            Flux:<input type="radio" name="flux" value="5" />
+            </p>
+          </fieldset>
+        </div>
         <div className="container-cards">
           {this.state.TigJobs.map(job =>
             <TigCard key={job.id} job={job} deleteJob={this.deleteJob} {...this.props} />
