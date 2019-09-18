@@ -1,5 +1,12 @@
 import React, { Component } from "react"
 import FluxManager from "../../modules/FluxManager"
+import Dropzone from "react-dropzone";
+import request from 'superagent'
+import './FluxForm.css'
+
+const CLOUDINARY_UPLOAD_PRESET = 'u9jkksfb';
+const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/de3gijcqo/image/upload';
+
 
 class FluxEditForm extends Component {
     //set the initial state
@@ -11,8 +18,9 @@ class FluxEditForm extends Component {
         voltage: "",
         wireSpeed: "",
         jobNotes: "",
-        img: "",
         loadingStatus: false,
+        uploadedFileCloudinaryUrl: '',
+        uploadedFile: '',
     };
 
     handleFieldChange = evt => {
@@ -20,6 +28,33 @@ class FluxEditForm extends Component {
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
     }
+
+    onImageDrop(files) {
+        this.setState({
+            uploadedFile: files[0]
+        });
+
+        this.handleImageUpload(files[0]);
+    }
+
+    handleImageUpload(file) {
+        let upload = request.post(CLOUDINARY_UPLOAD_URL)
+            .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+            .field('file', file);
+
+        upload.end((err, response) => {
+            if (err) {
+                console.error(err);
+            }
+
+            if (response.body.secure_url !== '') {
+                this.setState({
+                    uploadedFileCloudinaryUrl: response.body.secure_url
+                });
+            }
+        });
+    }
+
 
     updateExistingJob = evt => {
         evt.preventDefault()
@@ -35,8 +70,8 @@ class FluxEditForm extends Component {
             wireSize: this.state.wireSize,
             voltage: this.state.voltage,
             wireSpeed: this.state.wireSpeed,
-            img: this.state.img,
             jobNotes: this.state.jobNotes,
+            img: this.state.uploadedFileCloudinaryUrl,
         };
 
         FluxManager.update(editedJob)
@@ -89,28 +124,58 @@ class FluxEditForm extends Component {
                                 value={this.state.weldType}
                             />
                             <label htmlFor="weldType">Weld Type</label>
-                            <input
-                                type="text"
+                            <label htmlFor="wireSize">Wire Size</label>
+                            <select
                                 required
                                 onChange={this.handleFieldChange}
-                                id="wireSize"
-                                value={this.state.wireSize}
-                            />
-                            <label htmlFor="wireSize">Wire Size</label>
+                                id="wireSize">
+                                <option value=".024">.024"</option>
+                                <option value=".030">.030"</option>
+                                <option value=".035">.035"</option>
+                                <option value=".045">.045"</option>
+                            </select>
+                            <br />
                             <input
                                 type="number"
                                 required onChange={this.handleFieldChange}
-                                id="voltage" 
-                                value={this.state.voltage}/>
+                                id="voltage"
+                                value={this.state.voltage} />
                             <label htmlFor="voltage">Voltage</label>
                             <input
                                 type="number"
                                 required onChange={this.handleFieldChange}
-                                id="wireSpeed" 
-                                value={this.state.wireSpeed}/>
+                                id="wireSpeed"
+                                value={this.state.wireSpeed} />
                             <label htmlFor="wireSpeed">Wire Speed</label>
                             <label htmlFor="jobNotes">Job Notes</label>
+                            <br />
                             <textarea id="jobNotes" required onChange={this.handleFieldChange} value={this.state.jobNotes}></textarea>
+                            <div className="FileUpload">
+                                <Dropzone
+                                    onDrop={this.onImageDrop.bind(this)}
+                                    multiple={false}
+                                    accept="image/*">
+                                    {({ getRootProps, getInputProps }) => {
+                                        return (
+                                            <div
+                                                {...getRootProps()}
+                                            >
+                                                <input {...getInputProps()} />
+                                                {
+                                                    <p className="addBorder">Click Here To Add An Image</p>
+                                                }
+                                            </div>
+                                        )
+                                    }}
+                                </Dropzone>
+                            </div>
+
+                            <div>
+                                {this.state.uploadedFileCloudinaryUrl === '' ? null :
+                                    <div>
+                                        <img src={this.state.uploadedFileCloudinaryUrl} />
+                                    </div>}
+                            </div>
                         </div>
                         <div className="alignRight">
                             <button

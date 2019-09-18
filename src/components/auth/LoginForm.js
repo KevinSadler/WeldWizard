@@ -1,7 +1,8 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import UserManager from "../../modules/UserManager"
-import "bootstrap/dist/css/bootstrap.min.css"
+// import "bootstrap/dist/css/bootstrap.min.css"
+import "./LoginForm.css"
 
 
 class LoginForm extends Component {
@@ -57,7 +58,7 @@ class LoginForm extends Component {
         return (
             <>
                 <form>
-                    <fieldset>
+                    <fieldset className="loginFormFieldet">
                         <div className="formgrid">
                             <input
                                 type="username"

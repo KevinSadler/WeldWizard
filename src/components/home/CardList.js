@@ -62,7 +62,7 @@ class CardList extends Component {
   render() {
     return (
       <section className="section-content">
-        <div className="radio-selector-div">
+        {/* <div className="radio-selector-div">
           <fieldset>
             <legend>Filter By Process:</legend>
             <p>
@@ -73,7 +73,7 @@ class CardList extends Component {
             Flux:<input type="radio" name="flux" value="5" />
             </p>
           </fieldset>
-        </div>
+        </div> */}
         <div className="container-cards">
           {this.state.TigJobs.map(job =>
             <TigCard key={job.id} job={job} deleteJob={this.deleteJob} {...this.props} />

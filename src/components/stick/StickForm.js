@@ -15,6 +15,7 @@ class MigForm extends Component {
         electrode: "",
         amperage: "",
         jobNotes: "",
+        img: "",
         loadingStatus: false,
         uploadedFileCloudinaryUrl: '',
         uploadedFile: '',
@@ -87,7 +88,7 @@ class MigForm extends Component {
         return (
             <>
                 <form>
-                    <fieldset>
+                    <fieldset className="inputFormFieldset">
                         <div className="formgrid">
                             <input
                                 type="date"
@@ -126,6 +127,7 @@ class MigForm extends Component {
                             <textarea id="jobNotes" required onChange={this.handleFieldChange}></textarea>
                             <label htmlFor="jobNotes">Job Notes</label>
                         </div>
+                        <br/>
                         <div className="FileUpload">
                             <Dropzone
                                 onDrop={this.onImageDrop.bind(this)}
@@ -138,7 +140,7 @@ class MigForm extends Component {
                                         >
                                             <input {...getInputProps()} />
                                             {
-                                                <p>Try dropping some files here, or click to select files to upload.</p>
+                                                <p className="addBorder">Click Here To Add An Image</p>
                                             }
                                         </div>
                                     )
@@ -157,7 +159,7 @@ class MigForm extends Component {
                                 type="button"
                                 disabled={this.state.loadingStatus}
                                 onClick={this.createNewJob}
-                            >Add Event</button>
+                            >Add To Log</button>
                         </div>
                     </fieldset>
                 </form>

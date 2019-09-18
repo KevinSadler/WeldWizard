@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import FluxManager from '../../modules/FluxManager';
+import Dropzone from "react-dropzone";
+import request from 'superagent'
 import './FluxForm.css'
+
+const CLOUDINARY_UPLOAD_PRESET = 'u9jkksfb';
+const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/de3gijcqo/image/upload';
+
 
 class FluxForm extends Component {
     state = {
@@ -11,8 +17,9 @@ class FluxForm extends Component {
         wireSpeed: "",
         wireSize: "",
         jobNotes: "",
-        // userId: sessionStorage.getItem("credentials.activeUserId"),
-        loadingStatus: false
+        loadingStatus: false,
+        uploadedFileCloudinaryUrl: '',
+        uploadedFile: '',
     };
 
     handleFieldChange = evt => {
@@ -20,6 +27,35 @@ class FluxForm extends Component {
         stateToChange[evt.target.id] = evt.target.value;
         this.setState(stateToChange);
     };
+
+    // Code for uploading images to Cloudinary
+
+    onImageDrop(files) {
+        this.setState({
+            uploadedFile: files[0]
+        });
+
+        this.handleImageUpload(files[0]);
+    }
+
+    handleImageUpload(file) {
+        let upload = request.post(CLOUDINARY_UPLOAD_URL)
+            .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+            .field('file', file);
+
+        upload.end((err, response) => {
+            if (err) {
+                console.error(err);
+            }
+
+            if (response.body.secure_url !== '') {
+                this.setState({
+                    uploadedFileCloudinaryUrl: response.body.secure_url
+                });
+            }
+        });
+    }
+
     /*  Local method for validation, set weldType, create event      object, invoke the FluxManager post method, and redirect to the full event list
     */
     createNewJob = evt => {
@@ -38,6 +74,7 @@ class FluxForm extends Component {
                 wireSpeed: this.state.wireSpeed,
                 wireSize: this.state.wireSize,
                 jobNotes: this.state.jobNotes,
+                img: this.state.uploadedFileCloudinaryUrl,
                 userId: activeUserNum
             };
 
@@ -52,7 +89,7 @@ class FluxForm extends Component {
         return (
             <>
                 <form>
-                    <fieldset>
+                    <fieldset className="inputFormFieldset">
                         <div className="formgrid">
                             <input
                                 type="date"
@@ -84,28 +121,53 @@ class FluxForm extends Component {
                                 <option value=".035">.035"</option>
                                 <option value=".045">.045"</option>
                             </select>
-                            <br/>
+                            <br />
                             <input
                                 type="number"
                                 required onChange={this.handleFieldChange}
                                 id="voltage" />
                             <label htmlFor="voltage">Voltage</label>
-                            <br/>
                             <input
                                 type="number"
                                 required onChange={this.handleFieldChange}
                                 id="wireSpeed" />
                             <label htmlFor="wireSpeed">Wire Speed</label>
-                            <br/>
-                            <textarea id="jobNotes" required onChange={this.handleFieldChange}></textarea>
                             <label htmlFor="jobNotes">Job Notes</label>
+                            <br />
+                            <textarea id="jobNotes" required onChange={this.handleFieldChange}></textarea>
+                            <div className="FileUpload">
+                                <Dropzone
+                                    onDrop={this.onImageDrop.bind(this)}
+                                    multiple={false}
+                                    accept="image/*">
+                                    {({ getRootProps, getInputProps }) => {
+                                        return (
+                                            <div
+                                                {...getRootProps()}
+                                            >
+                                                <input {...getInputProps()} />
+                                                {
+                                                    <p className="addBorder">Click Here To Add An Image</p>
+                                                }
+                                            </div>
+                                        )
+                                    }}
+                                </Dropzone>
+                            </div>
+
+                            <div>
+                                {this.state.uploadedFileCloudinaryUrl === '' ? null :
+                                    <div>
+                                        <img src={this.state.uploadedFileCloudinaryUrl} />
+                                    </div>}
+                            </div>
                         </div>
                         <div className="alignRight">
                             <button
                                 type="button"
                                 disabled={this.state.loadingStatus}
                                 onClick={this.createNewJob}
-                            >Add Event</button>
+                            >Add To Log</button>
                         </div>
                     </fieldset>
                 </form>

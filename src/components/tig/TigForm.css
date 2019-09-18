@@ -1,4 +1,4 @@
-fieldset {
+.jobFormFieldset {
     max-width: 40em;
     height: 45em;
     padding: 4px;
@@ -59,11 +59,15 @@ fieldset input, fieldset button fieldset select {
 fieldset .alignRight {
     text-align: right;
 }
+fieldset .alignLeft {
+    text-align: left;
+}
 
 fieldset textarea {
     width: 400px;
     margin-bottom: 15px;
 }
-Dropzone {
-    border: 10px solid black;
+.addBorder {
+    border: 3px dotted black;
+    text-align: center;
 }

@@ -3,6 +3,7 @@ import {
     Card, CardImg, CardText, CardBody, CardLink,
     CardTitle, CardSubtitle
 } from 'reactstrap';
+import './FluxCard.css'
 
 class FluxCard extends Component {
     render() {

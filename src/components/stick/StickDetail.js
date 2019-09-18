@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import StickManager from '../../modules/StickManager';
 import {
-    Card, CardText, CardBody, CardLink,
-    CardTitle,
+    Card, CardText, CardBody,
+    CardTitle, CardImg
 } from 'reactstrap';
 
 class StickDetail extends Component {
@@ -14,7 +14,7 @@ class StickDetail extends Component {
         electrode: "",
         amperage: "",
         jobNotes: "",
-        img: "",
+        uploadedFile: "",
         loadingStatus: false,
     }
 
@@ -29,7 +29,7 @@ class StickDetail extends Component {
                     electrode: job.electrode,
                     amperage: job.amperage,
                     jobNotes: job.jobNotes,
-                    img: job.img,
+                    uploadedFile: job.img,
                     loadingStatus: false
                 });
             });
@@ -53,9 +53,7 @@ class StickDetail extends Component {
                         <CardText>Electrode:{this.state.electrode}</CardText>
                         <CardText>Amperage:{this.state.amperage}</CardText>
                         <CardText>Job Notes:{this.state.jobNotes}</CardText>
-                    </CardBody>
-                    <CardBody>
-                        <img width="100%" src={this.state.img} alt="Card image cap" />
+                        <CardImg src={this.state.uploadedFile}></CardImg>
                     </CardBody>
                     <button className="cancel-button" onClick={() => { this.props.history.push("/") }}>Back To Log</button>
                     <button type="button"
