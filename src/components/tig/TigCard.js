@@ -3,6 +3,7 @@ import {
     Card, CardImg, CardText, CardBody, CardLink,
     CardTitle, CardSubtitle
 } from 'reactstrap';
+import './TigCard.css'
 
 class TigCard extends Component {
     render() {

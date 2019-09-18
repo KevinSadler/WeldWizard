@@ -9,6 +9,11 @@
       "username": "Morty",
       "password": "123",
       "id": 2
+    },
+    {
+      "username": "Bryan",
+      "password": "123",
+      "id": 3
     }
   ],
   "migJobs": [
@@ -45,9 +50,22 @@
       "weldType": "root pass",
       "tungstenSize": "3/32 thoriated",
       "fillerMetal": "1/8",
-      "amperage": "80",
+      "amperage": "95",
       "cupSize": "5",
       "jobNotes": "Tried feeding the wire through the pipe but kept sticking my tungsten. Had better luck laying the filler in and walking the cup in the bevel and burning the root in. Used a 3/32 gap and 1/8 filler"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "date": "2019-09-18",
+      "baseMetal": "test",
+      "weldType": "test",
+      "tungstenSize": "test",
+      "fillerMetal": "test",
+      "amperage": "1",
+      "cupSize": "10",
+      "jobNotes": "test",
+      "img": "https://res.cloudinary.com/de3gijcqo/image/upload/v1568832687/cek3gq1pjoge2fct8xor.jpg"
     }
   ],
   "fluxJobs": [

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import TigManager from '../../modules/TigManager';
 import {
-    Card, CardText, CardBody, CardLink,
-    CardTitle,
+    Card, CardText, CardBody,
+    CardTitle, CardImg
 } from 'reactstrap';
+
 
 class TigDetail extends Component {
 
@@ -16,6 +17,7 @@ class TigDetail extends Component {
         amperage: "",
         cupSize: "",
         jobNotes: "",
+        uploadedFile: "",
         loadingStatus: false,
     }
 
@@ -32,6 +34,7 @@ class TigDetail extends Component {
                     amperage: job.amperage,
                     cupSize: job.cupSize,
                     jobNotes: job.jobNotes,
+                    uploadedFile: job.img,
                     loadingStatus: false
                 });
             });
@@ -57,9 +60,7 @@ class TigDetail extends Component {
                         <CardText>Amperage:{this.state.amperage}</CardText>
                         <CardText>Cup #:{this.state.cupSize}</CardText>
                         <CardText>Job Notes:{this.state.jobNotes}</CardText>
-                    </CardBody>
-                    <CardBody>
-                        <img width="100%" src={this.state.img} alt="Card image cap" />
+                        <CardImg src={this.state.uploadedFile}></CardImg>
                     </CardBody>
                     <button className="cancel-button" onClick={() => { this.props.history.push("/") }}>Back To Log</button>
                     <button type="button"
