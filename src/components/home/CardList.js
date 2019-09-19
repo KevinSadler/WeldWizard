@@ -10,87 +10,120 @@ import FluxManager from '../../modules/FluxManager'
 // import './job.css'
 
 class CardList extends Component {
-  //define what this component needs to render
-  state = {
-    TigJobs: [],
-    StickJobs: [],
-    MigJobs: [],
-    FluxJobs: [],
-    allJobs: []
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      TigJobs: [],
+      StickJobs: [],
+      MigJobs: [],
+      FluxJobs: [],
+      selectedOption: "all"
+    }
+    this.handleRadioChange = this.handleRadioChange.bind(this)
   }
 
+  handleRadioChange(event) {
+    this.setState({
+      selectedOption: event.target.value 
+    })
+  }
+
+
   componentDidMount() {
-    TigManager.getAll()
-      .then((TigJobs) => {
-        const updateJobs = this.state.allJobs
-        updateJobs.push(TigJobs)
-        this.setState({
-          TigJobs: TigJobs,
-          allJobs: updateJobs
+    if (this.state.radioNum === 2) {
+      MigManager.getAll()
+        .then((MigJobs) => {
+          this.setState({
+            MigJobs: MigJobs,
+          })
         })
-      })
-    StickManager.getAll()
-      .then((StickJobs) => {
-        const updateJobs = this.state.allJobs
-        updateJobs.push(StickJobs)
-        this.setState({
-          StickJobs: StickJobs,
-          allJobs: updateJobs
+    }
+    else if (this.state.radioNum === 3) {
+      StickManager.getAll()
+        .then((StickJobs) => {
+          this.setState({
+            StickJobs: StickJobs,
+          })
         })
-      })
-    MigManager.getAll()
-      .then((MigJobs) => {
-        const updateJobs = this.state.allJobs
-        updateJobs.push(MigJobs)
-        this.setState({
-          MigJobs: MigJobs,
-          allJobs: updateJobs
+    }
+    else if (this.state.radioNum === 4) {
+      TigManager.getAll()
+        .then((TigJobs) => {
+          this.setState({
+            TigJobs: TigJobs,
+          })
         })
-      })
-    FluxManager.getAll()
-      .then((FluxJobs) => {
-        const updateJobs = this.state.allJobs
-        updateJobs.push(FluxJobs)
-        this.setState({
-          FluxJobs: FluxJobs,
-          allJobs: updateJobs
+    }
+    else if (this.state.radioNum === 5) {
+      FluxManager.getAll()
+        .then((FluxJobs) => {
+          this.setState({
+            FluxJobs: FluxJobs,
+          })
         })
-      })
-    console.log(this.state.allJobs)
+    }
+    else {
+      MigManager.getAll()
+        .then((MigJobs) => {
+          this.setState({
+            MigJobs: MigJobs,
+          })
+        })
+      StickManager.getAll()
+        .then((StickJobs) => {
+          this.setState({
+            StickJobs: StickJobs,
+          })
+        })
+      TigManager.getAll()
+        .then((TigJobs) => {
+          this.setState({
+            TigJobs: TigJobs,
+          })
+        })
+      FluxManager.getAll()
+        .then((FluxJobs) => {
+          this.setState({
+            FluxJobs: FluxJobs,
+          })
+        })
+    }
   }
 
   render() {
     return (
       <section className="section-content">
-        {/* <div className="radio-selector-div">
+        <div className="radio-selector-div">
           <fieldset>
             <legend>Filter By Process:</legend>
             <p>
-            All:<input type="radio" name="all" value="1" defaultChecked/>
-            Mig:<input type="radio" name="mig" value="2" />
-            Stick:<input type="radio" name="stick" value="3" />
-            Tig:<input type="radio" name="tig" value="4" />
-            Flux:<input type="radio" name="flux" value="5" />
+              All:<input type="radio" name="selectedOption" value="all"  onChange={this.handleRadioChange}  />
+              Mig:<input type="radio" name="selectedOption" value="mig"  onChange={this.handleRadioChange} />
+              Stick:<input type="radio" name="selectedOption" value="stick"  onChange={this.handleRadioChange} />
+              Tig:<input type="radio" name="selectedOption" value="tig"  onChange={this.handleRadioChange} />
+              Flux:<input type="radio" name="selectedOption" value="flux"  onChange={this.handleRadioChange} />
             </p>
           </fieldset>
-        </div> */}
+        </div>
         <div className="container-cards">
-          {this.state.TigJobs.map(job =>
+          {this.state.selectedOption === "tig" || this.state.selectedOption === "all"? this.state.TigJobs.map(job =>
             <TigCard key={job.id} job={job} deleteJob={this.deleteJob} {...this.props} />
-          )}
-          {this.state.StickJobs.map(job =>
+          ): null}
+          {this.state.selectedOption === "stick" || this.state.selectedOption === "all"? this.state.StickJobs.map(job =>
             <StickCard key={job.id} job={job} deleteJob={this.deleteJob} {...this.props} />
-          )}
-          {this.state.MigJobs.map(job =>
+          ): null}
+          {this.state.selectedOption === "mig" || this.state.selectedOption === "all"? this.state.MigJobs.map(job =>
             <MigCard key={job.id} job={job} deleteJob={this.deleteJob} {...this.props} />
-          )}
-          {this.state.FluxJobs.map(job =>
+          ): null}
+          {this.state.selectedOption === "flux" || this.state.selectedOption === "all"? this.state.FluxJobs.map(job =>
             <FluxCard key={job.id} job={job} deleteJob={this.deleteJob} {...this.props} />
-          )}
+          ): null}
         </div>
       </section>
     )
   }
 }
+
 
 export default CardList
