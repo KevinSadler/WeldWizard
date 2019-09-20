@@ -14,6 +14,11 @@
       "username": "Bryan",
       "password": "123",
       "id": 3
+    },
+    {
+      "username": "Andy",
+      "password": "123",
+      "id": 4
     }
   ],
   "migJobs": [
@@ -71,17 +76,17 @@
       "img": "https://res.cloudinary.com/de3gijcqo/image/upload/v1568833948/vnflil50ohankukyucmi.jpg"
     },
     {
-      "date": "2019-09-19",
+      "id": 6,
+      "userId": 4,
+      "date": "2019-09-27",
       "baseMetal": "test",
       "weldType": "test",
       "tungstenSize": "test",
       "fillerMetal": "test",
       "amperage": "1",
-      "cupSize": "",
-      "jobNotes": "TEST",
-      "img": "https://res.cloudinary.com/de3gijcqo/image/upload/v1568910824/s4vjh5q2ucqzn1kldfod.jpg",
-      "userId": 1,
-      "id": 5
+      "cupSize": "6",
+      "jobNotes": "test blah blah",
+      "img": "https://res.cloudinary.com/de3gijcqo/image/upload/v1568995791/n2epsy77dc4bxhqn8vot.jpg"
     }
   ],
   "fluxJobs": [
