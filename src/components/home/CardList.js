@@ -7,7 +7,6 @@ import TigManager from '../../modules/TigManager'
 import StickManager from '../../modules/StickManager'
 import MigManager from '../../modules/MigManager'
 import FluxManager from '../../modules/FluxManager'
-// import './job.css'
 
 class CardList extends Component {
   constructor(props) {
@@ -31,65 +30,37 @@ class CardList extends Component {
 
 
   componentDidMount() {
-    if (this.state.radioNum === 2) {
-      MigManager.getAll()
+    const activeUser = JSON.parse(sessionStorage.getItem("credentials"))
+    const userId = activeUser.activeUserId
+      MigManager.getUsersMigJobs(userId)
         .then((MigJobs) => {
           this.setState({
             MigJobs: MigJobs,
           })
         })
-    }
-    else if (this.state.radioNum === 3) {
-      StickManager.getAll()
+    
+      StickManager.getUsersStickJobs(userId)
         .then((StickJobs) => {
           this.setState({
             StickJobs: StickJobs,
           })
         })
-    }
-    else if (this.state.radioNum === 4) {
-      TigManager.getAll()
+    
+      TigManager.getUsersTigJobs(userId)
         .then((TigJobs) => {
           this.setState({
             TigJobs: TigJobs,
           })
         })
-    }
-    else if (this.state.radioNum === 5) {
-      FluxManager.getAll()
+    
+      FluxManager.getUsersFluxJobs(userId)
         .then((FluxJobs) => {
           this.setState({
             FluxJobs: FluxJobs,
           })
         })
     }
-    else {
-      MigManager.getAll()
-        .then((MigJobs) => {
-          this.setState({
-            MigJobs: MigJobs,
-          })
-        })
-      StickManager.getAll()
-        .then((StickJobs) => {
-          this.setState({
-            StickJobs: StickJobs,
-          })
-        })
-      TigManager.getAll()
-        .then((TigJobs) => {
-          this.setState({
-            TigJobs: TigJobs,
-          })
-        })
-      FluxManager.getAll()
-        .then((FluxJobs) => {
-          this.setState({
-            FluxJobs: FluxJobs,
-          })
-        })
-    }
-  }
+  
 
   render() {
     return (
