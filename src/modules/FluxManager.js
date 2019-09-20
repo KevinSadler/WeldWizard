@@ -4,7 +4,7 @@ export default {
     get(id) {
         return fetch(`${remoteURL}/fluxJobs/${id}`).then(result => result.json())
     },
-    getFriendsmigJobs(id){
+    getUsersFluxJobs(id){
         return fetch(`${remoteURL}/fluxJobs/?userId=${id}&_sort=date`).then(result => result.json())
     },
     getAll() {

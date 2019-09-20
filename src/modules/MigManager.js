@@ -4,7 +4,7 @@ export default {
     get(id) {
         return fetch(`${remoteURL}/migJobs/${id}`).then(result => result.json())
     },
-    getFriendsmigJobs(id){
+    getUsersMigJobs(id){
         return fetch(`${remoteURL}/migJobs/?userId=${id}&_sort=date`).then(result => result.json())
     },
     getAll() {
