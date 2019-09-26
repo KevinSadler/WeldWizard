@@ -1,8 +1,9 @@
-    import React from 'react';
-    import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
-    import { Link, } from "react-router-dom"
-    
-    export default class Example extends React.Component {
+import React from 'react';
+import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
+import { Link, } from "react-router-dom"
+import './NavBar.css'
+
+export default class Example extends React.Component {
   constructor(props) {
     super(props);
 
@@ -13,7 +14,7 @@
   }
 
   handleLogout() {
-      sessionStorage.clear();
+    sessionStorage.clear();
   }
 
   toggle() {
@@ -24,27 +25,27 @@
 
   render() {
     return (
-      <div>
-        <Nav pills>
-          <NavItem>
-            <NavLink tag={Link} to="/" >Home</NavLink>
+      <div >
+        <Nav pills className="navBar">
+          <NavItem >
+            <NavLink className="navItem" tag={Link} to="/" >Home</NavLink>
           </NavItem>
-          <Dropdown nav isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+          <Dropdown  className="navItem" nav isOpen={this.state.dropdownOpen} toggle={this.toggle}>
             <DropdownToggle nav caret>
               Add New Job
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem tag={Link} to="/MigForm">Mig Job</DropdownItem>
-              <DropdownItem tag={Link} to="/StickForm">Stick Job</DropdownItem>
-              <DropdownItem tag={Link} to="/TigForm">Tig Job</DropdownItem>
-              <DropdownItem tag={Link} to="/FluxForm">Flux Core Job</DropdownItem>
+              <DropdownItem className="navItem" tag={Link} to="/MigForm">Mig Job</DropdownItem>
+              <DropdownItem className="navItem" tag={Link} to="/StickForm">Stick Job</DropdownItem>
+              <DropdownItem className="navItem" tag={Link} to="/TigForm">Tig Job</DropdownItem>
+              <DropdownItem className="navItem" tag={Link} to="/FluxForm">Flux Core Job</DropdownItem>
             </DropdownMenu>
           </Dropdown>
-          <NavItem>
-            <NavLink tag={Link} to="/Charts">Charts</NavLink>
+          <NavItem >
+            <NavLink className="navItem" tag={Link} to="/Charts">Charts</NavLink>
           </NavItem>
-          <NavItem>
-            <NavLink tag={Link} to="/" onClick={this.handleLogout}>Log Out</NavLink>
+          <NavItem >
+            <NavLink className="navItem" tag={Link} to="/" onClick={this.handleLogout}>Log Out</NavLink>
           </NavItem>
         </Nav>
       </div>

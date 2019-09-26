@@ -3,18 +3,18 @@ import {
     Card, CardImg, CardText, CardBody, CardLink,
     CardTitle, CardSubtitle
 } from 'reactstrap';
-import './MigCard.css'
+import '../tig/TigCard.css'
 
 class MigCard extends Component {
     render() {
         return (
-            <div>
+            <div className="jobCard">
                 <Card>
                     <CardBody>
                         <CardTitle>Process: GMAW</CardTitle>
                         <CardSubtitle>Date: {this.props.job.date}</CardSubtitle>
                     </CardBody>
-                    <CardImg width="100%" src={this.props.job.img} alt="" />
+                    <CardImg width="100%" src={this.props.job.img} alt="Mig Weld Image" />
                     <CardBody>
                         <CardText>{this.props.job.weldType}</CardText>
                         <CardLink href={"/migJobs/" + this.props.job.id}>Details</CardLink>

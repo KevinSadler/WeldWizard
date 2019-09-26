@@ -1,0 +1,16 @@
+.container-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+fieldset legend {
+text-align: center;
+}
+fieldset p {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.radio-option{
+margin-right: 15px;
+}

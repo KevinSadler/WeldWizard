@@ -4,6 +4,7 @@ import {
     Card, CardText, CardBody,
     CardTitle, CardImg
 } from 'reactstrap';
+import '../tig/CardDetail.css'
 
 class StickDetail extends Component {
 
@@ -44,21 +45,23 @@ class StickDetail extends Component {
     render() {
         return (
             <div>
-                <Card>
-                    <CardBody>
+                <Card className="detailCard">
+                    <CardBody >
                         <CardTitle>Process: GTAW</CardTitle>
                         <CardText>Date: {this.state.date}</CardText>
-                        <CardText>Base Metal:{this.state.baseMetal}</CardText>
-                        <CardText>Weld Type:{this.state.weldType}</CardText>
-                        <CardText>Electrode:{this.state.electrode}</CardText>
-                        <CardText>Amperage:{this.state.amperage}</CardText>
-                        <CardText>Job Notes:{this.state.jobNotes}</CardText>
-                        <CardImg src={this.state.uploadedFile}></CardImg>
+                        <CardText>Base Metal: {this.state.baseMetal}</CardText>
+                        <CardText>Weld Type: {this.state.weldType}</CardText>
+                        <CardText>Electrode: {this.state.electrode}</CardText>
+                        <CardText>Amperage: {this.state.amperage}</CardText>
+                        <CardText>Job Notes: {this.state.jobNotes}</CardText>
+                        <CardImg className="detailImg" src={this.state.uploadedFile} alt="Stick Weld Image"></CardImg>
                     </CardBody>
+                    <div className="buttonsDiv">
                     <button className="cancel-button" onClick={() => { this.props.history.push("/") }}>Back To Log</button>
                     <button type="button"
                         onClick={() => { this.props.history.push(`/stickJobs/${this.props.jobId}/edit`) }}>Edit Details</button>
                     <button type="button" onClick={this.handleDelete}>Delete</button>
+                    </div>
                 </Card>
             </div>
         );

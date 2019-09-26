@@ -4,6 +4,7 @@ import {
     Card, CardText, CardBody,
     CardTitle, CardImg
 } from 'reactstrap';
+import './CardDetail.css'
 
 
 class TigDetail extends Component {
@@ -48,24 +49,26 @@ class TigDetail extends Component {
     }
     render() {
         return (
-            <div>
-                <Card>
+            <div >
+                <Card className="detailCard">
                     <CardBody>
                         <CardTitle>Process: GTAW</CardTitle>
                         <CardText>Date: {this.state.date}</CardText>
-                        <CardText>Base Metal:{this.state.baseMetal}</CardText>
-                        <CardText>Weld Type:{this.state.weldType}</CardText>
-                        <CardText>Tungsten:{this.state.tungstenSize}</CardText>
-                        <CardText>Filler Metal:{this.state.fillerMetal}</CardText>
-                        <CardText>Amperage:{this.state.amperage}</CardText>
-                        <CardText>Cup #:{this.state.cupSize}</CardText>
-                        <CardText>Job Notes:{this.state.jobNotes}</CardText>
-                        <CardImg src={this.state.uploadedFile}></CardImg>
+                        <CardText>Base Metal: {this.state.baseMetal}</CardText>
+                        <CardText>Weld Type: {this.state.weldType}</CardText>
+                        <CardText>Tungsten: {this.state.tungstenSize}</CardText>
+                        <CardText>Filler Metal: {this.state.fillerMetal}</CardText>
+                        <CardText>Amperage: {this.state.amperage}</CardText>
+                        <CardText>Cup #: {this.state.cupSize}</CardText>
+                        <CardText>Job Notes: {this.state.jobNotes}</CardText>
+                        <CardImg className="detailImg" src={this.state.uploadedFile} alt="Tig Weld Image"></CardImg>
                     </CardBody>
+                    <div className="buttonsDiv">
                     <button className="cancel-button" onClick={() => { this.props.history.push("/") }}>Back To Log</button>
                     <button type="button"
                         onClick={() => { this.props.history.push(`/tigJobs/${this.props.jobId}/edit`) }}>Edit Details</button>
                     <button type="button" onClick={this.handleDelete}>Delete</button>
+                    </div>
                 </Card>
             </div>
         );

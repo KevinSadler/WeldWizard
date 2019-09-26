@@ -1,0 +1,27 @@
+.detailCard{
+    width: 500px;
+    height: 600px;
+    overflow: scroll;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid black;
+    margin-top: 50px;
+
+}
+.detailImg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+    height: 400px;
+}
+button{
+    width: 100px;
+}
+.buttonsDiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
