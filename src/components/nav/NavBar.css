@@ -1,0 +1,21 @@
+ /* .navbar {
+    display: block;
+    float: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    background-color: #f1f1f1;
+    height: 100%; 
+    position: fixed; 
+    overflow: auto; 
+  }  */
+  .navItem{
+    font-size: 2em;
+}
+  .navBar {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }

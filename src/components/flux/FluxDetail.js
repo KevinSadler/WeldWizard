@@ -4,6 +4,7 @@ import {
     Card, CardText, CardBody,
     CardTitle, CardImg
 } from 'reactstrap';
+import '../tig/CardDetail.css'
 
 class FluxDetail extends Component {
 
@@ -56,15 +57,14 @@ class FluxDetail extends Component {
                         <CardText>Wire Size:{this.state.wireSize}</CardText>
                         <CardText>Wire Speed:{this.state.wireSpeed}</CardText>
                         <CardText>Job Notes:{this.state.jobNotes}</CardText>
-                        <CardImg src={this.state.uploadedFile}></CardImg>
+                        <CardImg className="detailImg" src={this.state.uploadedFile}></CardImg>
                     </CardBody>
-                    <CardBody>
-                        <img width="100%" src={this.state.img} alt="" />
-                    </CardBody>
+                    <div className="buttonsDiv">
                     <button className="cancel-button" onClick={() => { this.props.history.push("/") }}>Back To Log</button>
                     <button type="button"
                         onClick={() => { this.props.history.push(`/fluxJobs/${this.props.jobId}/edit`) }}>Edit Details</button>
                     <button type="button" onClick={this.handleDelete}>Delete</button>
+                    </div>
                 </Card>
             </div>
         );
