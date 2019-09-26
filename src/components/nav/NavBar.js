@@ -1,6 +1,6 @@
     import React from 'react';
     import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
-    import { Link } from "react-router-dom"
+    import { Link, } from "react-router-dom"
     
     export default class Example extends React.Component {
   constructor(props) {
@@ -27,7 +27,7 @@
       <div>
         <Nav pills>
           <NavItem>
-            <NavLink href="/" active>Home</NavLink>
+            <NavLink tag={Link} to="/" >Home</NavLink>
           </NavItem>
           <Dropdown nav isOpen={this.state.dropdownOpen} toggle={this.toggle}>
             <DropdownToggle nav caret>
@@ -41,10 +41,10 @@
             </DropdownMenu>
           </Dropdown>
           <NavItem>
-            <NavLink href="/Charts">Charts</NavLink>
+            <NavLink tag={Link} to="/Charts">Charts</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/" onClick={this.handleLogout}>Log Out</NavLink>
+            <NavLink tag={Link} to="/" onClick={this.handleLogout}>Log Out</NavLink>
           </NavItem>
         </Nav>
       </div>

@@ -15,6 +15,7 @@ import StickEditForm from "./stick/StickEditForm"
 import TigForm from "./tig/TigForm"
 import TigDetail from "./tig/TigDetail"
 import TigEditForm from "./tig/TigEditForm"
+import Charts from "./charts/Charts"
 
 class ApplicationViews extends Component {
 
@@ -128,6 +129,16 @@ class ApplicationViews extends Component {
                             : <Redirect to="/login" />;
                     }}
                 />
+                
+                <Route
+                    exact
+                    path="/Charts"
+                    render={props => {
+                        return this.isAuthenticated()
+                            ? (<Charts {...props} />)
+                            : (<Redirect to="/login" />)
+                    }}
+                    />
             </React.Fragment>
         )
     }
