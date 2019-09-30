@@ -1,3 +1,31 @@
-#username #password {
-    width: 10px;
+.username {
+    width: 400px;
+}
+.password{
+    width: 400px;
+}
+.loginFormFieldset{
+    justify-content: center;
+}
+.formgrid{
+    display: block;
+    text-align: center;
+    margin-top: 200px;
+}
+.loginButtonDiv {
+    display: block;
+    text-align: center;
+}
+.registerButtonDiv {
+    display: block;
+    text-align: center;
+}
+.navBar{
+    /* display: none; */
+}
+.loginButton {
+    width: 100px;
+}
+.registerButton {
+    width: 100px;
 }

@@ -12,10 +12,21 @@
   }  */
   .navItem{
     font-size: 2em;
+    color: rgb(55, 55, 55);
+}
+.navDrop{
+  color: rgb(55, 55, 55);
 }
   .navBar {
       display: flex;
       justify-content: space-around;
       margin-top: 10px;
       margin-bottom: 10px;
+  }
+  .navLogo {
+    text-align: center;
+  }
+  .logoImage{
+    width: 200px;
+    height: 200px;
   }
