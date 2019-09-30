@@ -62,7 +62,6 @@ class CardList extends Component {
         })
     }
   
-
   render() {
     return (
       <section className="section-content">

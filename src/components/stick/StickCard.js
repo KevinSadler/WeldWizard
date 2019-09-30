@@ -10,12 +10,12 @@ class StickCard extends Component {
         return (
             <div className="jobCard">
                 <Card>
-                    <CardBody>
+                    <CardBody className="cardBody">
                         <CardTitle>Process: SMAW</CardTitle>
                         <CardSubtitle>Date: {this.props.job.date}</CardSubtitle>
                     </CardBody>
                     <CardImg width="100%" src={this.props.job.img} alt="Stick Weld Image" />
-                    <CardBody>
+                    <CardBody className="cardBody">
                         <CardText>{this.props.job.weldType}</CardText>
                         <CardLink href={"/stickJobs/" + this.props.job.id}>Details</CardLink>
                     </CardBody>

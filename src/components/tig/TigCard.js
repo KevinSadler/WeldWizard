@@ -10,12 +10,12 @@ class TigCard extends Component {
         return (
             <div className="jobCard">
                 <Card>
-                    <CardBody>
+                    <CardBody className="cardBody">
                         <CardTitle>Process: GTAW</CardTitle>
                         <CardSubtitle>Date: {this.props.job.date}</CardSubtitle>
                     </CardBody>
                     <CardImg width="100%" src={this.props.job.img} alt="Tig Weld Image" />
-                    <CardBody>
+                    <CardBody className="cardBody">
                         <CardText>{this.props.job.weldType}</CardText>
                         <CardLink className="cardLink" href={"/tigJobs/" + this.props.job.id}>Details</CardLink>
                     </CardBody>

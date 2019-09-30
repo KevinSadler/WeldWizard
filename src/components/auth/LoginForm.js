@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import UserManager from "../../modules/UserManager"
-// import "bootstrap/dist/css/bootstrap.min.css"
 import "./LoginForm.css"
+// import NavBar from "../nav/NavBar"
 
 
 class LoginForm extends Component {
@@ -21,7 +21,7 @@ class LoginForm extends Component {
         const stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
-      }
+    }
 
     handleLogin = () => {
         sessionStorage.setItem(
@@ -40,11 +40,12 @@ class LoginForm extends Component {
         evt.preventDefault()
         UserManager.getAll()
             .then(users => {
+                console.log(users)
                 const currentUser = users.find(user => {
                     return user.username === this.state.username && user.password === this.state.password
                 })
                 if (currentUser !== undefined) {
-                    this.setState({activeUserId: currentUser.id})
+                    this.setState({ activeUserId: currentUser.id })
                     this.handleLogin()
                 }
                 else {
@@ -56,39 +57,40 @@ class LoginForm extends Component {
 
     render() {
         return (
-            <>
-                <form>
-                    <fieldset className="loginFormFieldet">
-                        <div className="formgrid">
-                            <input
-                                type="username"
-                                required
-                                onChange={this.handleFieldChange}
-                                id="username"
-                                placeholder="Username"
-                            />
-                            <input
-                                type="password"
-                                required
-                                onChange={this.handleFieldChange}
-                                id="password"
-                                placeholder="Password"
-                            />
-                        </div>
-                        <div className="alignRight">
-                            <button
-                                type="button"
-                                disabled={this.state.loadingStatus}
-                                onClick={this.handleLoginVersion1}
+            <form>
+                <fieldset className="loginFormFieldset">
+                    <div className="formgrid">
+                        <input
+                            type="username"
+                            required
+                            onChange={this.handleFieldChange}
+                            className="username"
+                            placeholder="Username"
+                            id="username"
+                        />
+                        <input
+                            type="password"
+                            required
+                            onChange={this.handleFieldChange}
+                            className="password"
+                            placeholder="Password"
+                            id="password"
+                        />
+                    </div>
+                    <div className="loginButtonDiv">
+                        <button
+                            className="loginButton"
+                            type="button"
+                            disabled={this.state.loadingStatus}
+                            onClick={this.handleLoginVersion1}
 
-                            >Login</button>
-                        </div>
-                        <div>
-                            <Link to={`/register`}><button>Sign up for free!</button></Link>
-                        </div>
-                    </fieldset>
-                </form>
-            </>
+                        >Login</button>
+                    </div>
+                    <div className="registerButtonDiv">
+                        <Link to={`/register`}><button className="registerButton">Register</button></Link>
+                    </div>
+                </fieldset>
+            </form>
         )
     }
 }

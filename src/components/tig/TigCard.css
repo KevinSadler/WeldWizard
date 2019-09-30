@@ -7,8 +7,14 @@ img {
 max-width: 325px;
 text-align: center;
 /* background-color: rgba(108, 124, 133, 0.199); */
-padding: 20px;
+/* padding: 20px; */
 margin: 10px;
-border: 2px solid grey;
+border: 3px solid black;
+background-color: rgba(156, 154, 154, 0.897);
+}
+.cardBody{
+    background-color: rgba(70, 61, 61, 0.267);
+    /* background-color: rgba(108, 124, 133, 0.199); */
+
 }
 

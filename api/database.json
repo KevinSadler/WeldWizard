@@ -19,6 +19,11 @@
       "username": "Andy",
       "password": "123",
       "id": 4
+    },
+    {
+      "username": "danigilbert13",
+      "password": "daddysgirl",
+      "id": 5
     }
   ],
   "migJobs": [
@@ -46,6 +51,17 @@
       "amperage": "75",
       "img": "https://res.cloudinary.com/de3gijcqo/image/upload/v1568835909/dgncszylh6zvj8bcsit7.jpg",
       "jobNotes": "Left a landing on the bevel so I turned the amps up to 75 for better penetration"
+    },
+    {
+      "id": 2,
+      "userId": 5,
+      "date": "2019-09-30",
+      "baseMetal": "tester",
+      "weldType": "tester",
+      "electrode": "6919",
+      "amperage": "-3",
+      "img": "https://res.cloudinary.com/de3gijcqo/image/upload/v1569565190/pderskuqywfv28wuf4dc.jpg",
+      "jobNotes": "blah blah"
     }
   ],
   "tigJobs": [
@@ -59,7 +75,7 @@
       "fillerMetal": "1/8",
       "amperage": "90",
       "cupSize": "10",
-      "jobNotes": "Business as usual, ya mean?",
+      "jobNotes": "Business as usual, ya mean? :)",
       "img": "https://res.cloudinary.com/de3gijcqo/image/upload/v1568845034/dhokg9ubmnkg6fssrc9a.jpg"
     },
     {

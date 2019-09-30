@@ -10,12 +10,12 @@ class MigCard extends Component {
         return (
             <div className="jobCard">
                 <Card>
-                    <CardBody>
+                    <CardBody className="cardBody">
                         <CardTitle>Process: GMAW</CardTitle>
                         <CardSubtitle>Date: {this.props.job.date}</CardSubtitle>
                     </CardBody>
                     <CardImg width="100%" src={this.props.job.img} alt="Mig Weld Image" />
-                    <CardBody>
+                    <CardBody className="cardBody">
                         <CardText>{this.props.job.weldType}</CardText>
                         <CardLink href={"/migJobs/" + this.props.job.id}>Details</CardLink>
                     </CardBody>
