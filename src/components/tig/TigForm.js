@@ -9,7 +9,7 @@ const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/de3gijcqo/image/u
 
 class TigForm extends Component {
     state = {
-        jobDate: "",
+        jobDate: this.today,
         baseMetal: "",
         weldType: "",
         amperage: "",
@@ -56,7 +56,17 @@ class TigForm extends Component {
             }
         });
     }
+    today = new Date();
+    dd = String(this.today.getDate()).padStart(2, '0');
+    mm = String(this.today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    yyyy = this.today.getFullYear();
 
+    today = this.mm + '/' + this.dd + '/' + this.yyyy;
+    
+
+    componentDidMount() {
+        console.log(this.today)
+    }
     /*  Local method for validation, set weldType, create event      object, invoke the TigManager post method, and redirect to the full event list
     */
     createNewJob = evt => {

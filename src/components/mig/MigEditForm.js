@@ -89,7 +89,7 @@ class MigEditForm extends Component {
                     wireSize: job.wireSize,
                     voltage: job.voltage,
                     wireSpeed: job.wireSpeed,
-                    img: job.img,
+                    uploadedFileCloudinaryUrl: job.img,
                     jobNotes: job.jobNotes,
                 });
             });
@@ -98,14 +98,14 @@ class MigEditForm extends Component {
     render() {
         return (
             <>
-                <form>
-                    <fieldset>
+                <form className="form">
+                    <fieldset className="inputFormFieldset">
                         <div className="formgrid">
                             <input
                                 type="date"
                                 required
                                 onChange={this.handleFieldChange}
-                                id="date"
+                                id="jobDate"
                                 value={this.state.date}
                             />
                             <label htmlFor="jobDate">Job Date</label>
@@ -150,7 +150,7 @@ class MigEditForm extends Component {
                             <label htmlFor="wireSpeed">Wire Speed</label>
                             <label htmlFor="jobNotes">Job Notes</label>
                             <br />
-                            <textarea id="jobNotes" required onChange={this.handleFieldChange} value={this.state.jobNotes}></textarea>
+                            <textarea className="jobNotes" id="jobNotes" required onChange={this.handleFieldChange} value={this.state.jobNotes}></textarea>
                             <div className="FileUpload">
                                 <Dropzone
                                     onDrop={this.onImageDrop.bind(this)}
@@ -180,6 +180,7 @@ class MigEditForm extends Component {
                         </div>
                         <div className="alignRight">
                             <button
+                                className="addButton"
                                 type="button"
                                 disabled={this.state.loadingStatus}
                                 onClick={this.updateExistingJob}
