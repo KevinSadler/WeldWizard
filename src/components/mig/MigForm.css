@@ -1,14 +1,6 @@
-.inputFormFieldset {
-    max-width: 40em;
-    padding: 4px;
-    margin: 2em auto;
-    border: 0 none;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    border-radius: 5px;
-    background: aliceblue;
-}
 
-fieldset input, fieldset button{
+
+fieldset input, fieldset button .jobNotes{
     box-sizing: border-box;
     padding: .2em .4em;
     margin: .2em 0;
@@ -49,22 +41,38 @@ fieldset .formgrid {
     align-items: center;
 }
 
-fieldset input, fieldset button {
+fieldset input, fieldset button .jobNotes{
     grid-column: 2 /4;
     width: auto;
     margin: 0
 }
 
-fieldset .alignRight {
-    text-align: right;
-}
-fieldset .alignLeft {
-    text-align: left;
-}
 .addBorder {
     border: 3px dotted black;
     text-align: center;
 }
 #wireSize {
     width: 5em;
+}
+.formgrid{
+position: relative;
+top: -150px;
+max-width: 600px;
+}
+
+.inputFormFieldset{
+position: center;
+max-height: 1200px;
+}
+
+.addButton{
+    position: relative;
+    top: -150px;
+}
+
+.form{
+    height: 1400px;
+}
+.jobNotes{
+    margin-left: -25px;
 }

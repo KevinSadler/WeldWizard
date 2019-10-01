@@ -38,6 +38,30 @@
       "img": "https://res.cloudinary.com/de3gijcqo/image/upload/v1568839572/quoxbgpsye9shnbfkhp1.jpg",
       "userId": 1,
       "id": 1
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "date": "2016-10-01",
+      "baseMetal": "6\" schedule 40",
+      "weldType": "3G open root test",
+      "wireSize": ".035",
+      "voltage": "24",
+      "wireSpeed": "240",
+      "jobNotes": "Plates got very hot, should have let cool before starting cover pass. Update: it passed!",
+      "img": "https://res.cloudinary.com/de3gijcqo/image/upload/v1569899755/kmezlnl3rv8qpnfqf018.jpg"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "date": "2016-10-01",
+      "baseMetal": "3/8\" carbon steel",
+      "weldType": "3G open root test",
+      "wireSize": ".035",
+      "voltage": "24",
+      "wireSpeed": "240",
+      "jobNotes": "The plates got very hot, should have let them cool before starting the cover pass. Update: it passed!",
+      "img": "https://res.cloudinary.com/de3gijcqo/image/upload/v1569901484/woz8q6n2snzqufmm3hvm.jpg"
     }
   ],
   "stickJobs": [
@@ -46,7 +70,7 @@
       "userId": 1,
       "date": "2019-09-16",
       "baseMetal": "12\" Schedule 80",
-      "weldType": "root pass",
+      "weldType": "Root Pass",
       "electrode": "1/8\" 6010",
       "amperage": "75",
       "img": "https://res.cloudinary.com/de3gijcqo/image/upload/v1568835909/dgncszylh6zvj8bcsit7.jpg",
@@ -62,6 +86,17 @@
       "amperage": "-3",
       "img": "https://res.cloudinary.com/de3gijcqo/image/upload/v1569565190/pderskuqywfv28wuf4dc.jpg",
       "jobNotes": "blah blah"
+    },
+    {
+      "date": "2019-09-30",
+      "baseMetal": "4\" schedule 40 Carbon Pipe",
+      "weldType": "Cover Pass",
+      "electrode": "1/8\" 7018",
+      "amperage": "120",
+      "jobNotes": "Tie-in looks good!",
+      "img": "https://res.cloudinary.com/de3gijcqo/image/upload/v1569868899/fqa7tj2xky1g2ms6aytf.jpg",
+      "userId": 1,
+      "id": 3
     }
   ],
   "tigJobs": [
@@ -88,7 +123,7 @@
       "fillerMetal": "test",
       "amperage": "1",
       "cupSize": "10",
-      "jobNotes": "test",
+      "jobNotes": "tester",
       "img": "https://res.cloudinary.com/de3gijcqo/image/upload/v1568833948/vnflil50ohankukyucmi.jpg"
     },
     {
@@ -117,6 +152,18 @@
       "wireSpeed": "240",
       "jobNotes": "This Lincoln UltraCore wire runs so smooth... but dang it gets hot!",
       "img": "https://res.cloudinary.com/de3gijcqo/image/upload/v1568844596/l1erf4emr9swfdhig0rs.jpg"
+    },
+    {
+      "date": "2019-09-30",
+      "baseMetal": "1\" Carbon Steel",
+      "weldType": "1/2\" Fillet Weld",
+      "voltage": "24",
+      "wireSpeed": "240",
+      "wireSize": ".045",
+      "jobNotes": "Stacked 3 passes ",
+      "img": "https://res.cloudinary.com/de3gijcqo/image/upload/v1569869514/dxoc93k3mkyq6zo9yutj.jpg",
+      "userId": 1,
+      "id": 4
     }
   ]
 }

@@ -89,7 +89,7 @@ class MigForm extends Component {
 
         return (
             <>
-                <form>
+                <form className="form">
                     <fieldset className="inputFormFieldset">
                         <div className="formgrid">
                             <input
@@ -134,9 +134,9 @@ class MigForm extends Component {
                                 type="number"
                                 required onChange={this.handleFieldChange}
                                 id="wireSpeed" />
-                            <label className="alignLeft" htmlFor="jobNotes">Job Notes</label>
+                            <label htmlFor="jobNotes">Job Notes</label>
                             <br />
-                            <textarea id="jobNotes" required onChange={this.handleFieldChange}></textarea>
+                            <textarea className="jobNotes" id="jobNotes" required onChange={this.handleFieldChange}></textarea>
                             <div className="FileUpload">
                                 <Dropzone
                                     onDrop={this.onImageDrop.bind(this)}
@@ -166,6 +166,7 @@ class MigForm extends Component {
                         </div>
                         <div className="alignRight">
                             <button
+                            className="addButton"
                                 type="button"
                                 disabled={this.state.loadingStatus}
                                 onClick={this.createNewJob}
